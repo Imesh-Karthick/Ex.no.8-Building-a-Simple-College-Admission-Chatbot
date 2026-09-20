@@ -43,16 +43,26 @@ import re
 import random
 
 knowledge_base = {
+   
     "greeting": {
+    
         "patterns": [
+        
             r"\bhi\b",
+            
             r"\bhello\b",
+            
             r"\bhey\b",
+            
             r"good morning",
+            
             r"good afternoon"
         ],
+        
         "responses": [
+        
             "Hello! Welcome to the College Admission Help Desk. "
+            
             "How can I assist you today?"
         ]
     },
@@ -84,10 +94,13 @@ knowledge_base = {
 }
 
 fallback_responses = [
+    
     "I'm sorry, I did not quite understand that. Could you "
+    
     "please rephrase your question?",
 
     "I can help with courses, eligibility, fees, application "
+    
     "process, documents, dates, hostel and contact details."
 ]
 
@@ -126,16 +139,27 @@ def chat():
 
 
 sample_queries = [
+    
     "Hi there",
+    
     "What courses do you offer?",
+    
     "What is the eligibility criteria for B.Tech?",
+    
     "How much is the tuition fee?",
+    
     "How can I apply for admission?",
+    
     "What documents are required?",
+    
     "When is the last date to apply?",
+    
     "Do you provide hostel facility?",
+    
     "What is your contact number?",
+    
     "Thank you for the help",
+    
     "Bye"
 ]
 
@@ -144,8 +168,11 @@ print("College Admission Chatbot")
 print("-" * 55)
 
 for query in sample_queries:
+    
     print(f"You: {query}")
+    
     print(f"Bot: {get_response(query)}")
+    
     print("-" * 55)
     
 ### Sample Conversation Output (Part 1)
