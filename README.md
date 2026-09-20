@@ -6,11 +6,14 @@ A chatbot is a software application that simulates a conversation with a human u
 ### Procedure
 ### Step 1: Import Required Libraries
 ●	re – Python's regular expression module, used to search for keyword patterns inside the user's message.
+
 ●	random – used to randomly pick one response when more than one reply is available for the same intent, so the chatbot does not sound repetitive.
 
 ### Step 2: Design the Knowledge Base (Intents and Responses)
 ●	The knowledge base is stored as a Python dictionary, where every key is an intent (topic) such as courses, eligibility, fees or hostel.
+
 ●	Each intent stores a list of patterns (keywords/phrases likely to appear in a user's question) and a list of possible responses.
+
 ●	Organising the data this way makes the chatbot easy to extend — a new admission topic can be added simply by adding one more entry to the dictionary.
 
 Knowledge Base Summary
@@ -18,21 +21,28 @@ The table below summarises the complete knowledge base used by the chatbot:
 
 ### Step 3: Function to Match User Input to an Intent
 ●	Converts the user's sentence to lower case so that matching is not case-sensitive.
+
 ●	re.search() scans the message for each pattern of every intent; the first intent whose pattern is found is returned.
+
 ●	If no pattern matches any intent, the function returns None so the fallback response can be used.
 
 ### Step 4: Define the Chatbot Response Function
 ●	Calls match_intent() to identify what the user is asking about.
+
 ●	random.choice() picks one response from the matched intent's response list.
+
 ●	Returns a fallback message when the intent could not be identified, instead of leaving the user without a reply.
 
 ### Step 5: Build the Interactive Conversation Loop
 ●	input() continuously reads the user's message from the console.
+
 ●	get_response() generates the reply for every message typed by the user.
+
 ●	The loop ends automatically once the matched intent is “goodbye” (e.g. the user types bye / exit / quit).
 
 ### Step 6: Test the Chatbot with Sample Queries
 ●	A list of realistic sample questions is used to automatically test every intent in the knowledge base.
+
 ●	Each query and the chatbot's corresponding reply are printed, which makes it easy to verify that every category of question is answered correctly.
 
 ### Step 7: Run the Chatbot
